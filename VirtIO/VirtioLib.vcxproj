@@ -511,6 +511,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win10 Debug|ARM64'">
     <OutDir>objchk_win10_arm64\arm64\</OutDir>
     <IntDir>objchk_win10_arm64\arm64\</IntDir>
+    <DisableProductionSignDebugWarnings>true</DisableProductionSignDebugWarnings>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
@@ -542,6 +543,9 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|x64'">$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|ARM64'">$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <DriverSign>
+      <FileDigestAlgorithm Condition="'$(Configuration)|$(Platform)'=='Win10 Debug|ARM64'">sha1</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(PlatformToolset)'=='v140_xp'">
     <ClCompile>
