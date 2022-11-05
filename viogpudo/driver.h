@@ -4,6 +4,20 @@
 extern "C"
 DRIVER_INITIALIZE DriverEntry;
 
+NTSTATUS InitDisplayOnly(
+    _In_ DRIVER_OBJECT* pDriverObject,
+    _In_ UNICODE_STRING* pRegistryPath
+);
+
+NTSTATUS InitFullGraphicsDriver(
+    _In_ DRIVER_OBJECT* pDriverObject,
+    _In_ UNICODE_STRING* pRegistryPath
+);
+
+NTSTATUS DxgkDdiCreateDevice(
+    CONST HANDLE  hAdapter,
+    DXGKARG_CREATEDEVICE* pCreateDevice
+);
 //
 // PnP DDIs
 //
@@ -206,3 +220,8 @@ VioGpuDodSystemDisplayWrite(
     _In_  UINT  PositionX,
     _In_  UINT  PositionY);
 
+//FullGraphs specific
+NTSTATUS DxgkddiCreateallocation(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _Inout_ INOUT_PDXGKARG_CREATEALLOCATION pCreateAllocation
+);

@@ -30,6 +30,7 @@
     <ClInclude Include="debug.h" />
     <ClInclude Include="driver_api.h" />
     <ClInclude Include="GLtypes.h" />
+    <ClInclude Include="driver.h" />
     <ClInclude Include="helper.h" />
     <ClInclude Include="opengl32.h" />
     <ClInclude Include="state.h" />
@@ -41,6 +42,7 @@
     <ClInclude Include="win_types.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="driver.cpp" />
     <ClCompile Include="driver_api.cpp" />
     <ClCompile Include="opengl32.cpp" />
     <ClCompile Include="state.cpp" />
@@ -129,7 +131,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <IncludePath>$(DDK_INC_PATH);$(IncludePath)</IncludePath>
     <TargetName>opengl32</TargetName>
-    <OutDir>$(Platform)\$(ConfigurationName)\</OutDir>
+    <OutDir>$(SolutionDir)viogpudo\objchk_win10_arm64\arm64\viogpudo\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(DDK_INC_PATH);$(IncludePath)</IncludePath>
