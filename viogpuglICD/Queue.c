@@ -18,7 +18,7 @@ Environment:
 #include "queue.tmh"
 
 NTSTATUS
-viogpuuserQueueInitialize(
+viogpuglICDQueueInitialize(
     _In_ WDFDEVICE Device
     )
 /*++
@@ -56,8 +56,8 @@ Return Value:
         WdfIoQueueDispatchParallel
         );
 
-    queueConfig.EvtIoDeviceControl = viogpuuserEvtIoDeviceControl;
-    queueConfig.EvtIoStop = viogpuuserEvtIoStop;
+    queueConfig.EvtIoDeviceControl = viogpuglICDEvtIoDeviceControl;
+    queueConfig.EvtIoStop = viogpuglICDEvtIoStop;
 
     status = WdfIoQueueCreate(
                  Device,
@@ -75,7 +75,7 @@ Return Value:
 }
 
 VOID
-viogpuuserEvtIoDeviceControl(
+viogpuglICDEvtIoDeviceControl(
     _In_ WDFQUEUE Queue,
     _In_ WDFREQUEST Request,
     _In_ size_t OutputBufferLength,
@@ -118,7 +118,7 @@ Return Value:
 }
 
 VOID
-viogpuuserEvtIoStop(
+viogpuglICDEvtIoStop(
     _In_ WDFQUEUE Queue,
     _In_ WDFREQUEST Request,
     _In_ ULONG ActionFlags

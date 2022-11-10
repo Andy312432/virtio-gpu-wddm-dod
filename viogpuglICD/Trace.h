@@ -18,12 +18,12 @@ Environment:
 //
 // Define the tracing flags.
 //
-// Tracing GUID - 8162ebbf-0785-4290-8e36-8308510e0a5a
+// Tracing GUID - f88a2986-9e62-4d73-84d3-c58ec4390f44
 //
 
 #define WPP_CONTROL_GUIDS                                              \
     WPP_DEFINE_CONTROL_GUID(                                           \
-        MyDriver1TraceGuid, (8162ebbf,0785,4290,8e36,8308510e0a5a),                  \
+        MyDriver1TraceGuid, (f88a2986,9e62,4d73,84d3,c58ec4390f44),                  \
                                                                        \
         WPP_DEFINE_BIT(MYDRIVER_ALL_INFO)                              \
         WPP_DEFINE_BIT(TRACE_DRIVER)                                   \
@@ -58,5 +58,5 @@ Environment:
 // Driver specific #defines
 //
 #if UMDF_VERSION_MAJOR == 2 && UMDF_VERSION_MINOR == 0
-    #define MYDRIVER_TRACING_ID      L"Microsoft\\UMDF2.0\\viogpuuser V1.0"
+    #define MYDRIVER_TRACING_ID      L"Microsoft\\UMDF2.0\\viogpuglICD V1.0"
 #endif

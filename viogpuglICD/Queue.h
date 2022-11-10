@@ -29,14 +29,14 @@ typedef struct _QUEUE_CONTEXT {
 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(QUEUE_CONTEXT, QueueGetContext)
 
 NTSTATUS
-viogpuuserQueueInitialize(
+viogpuglICDQueueInitialize(
     _In_ WDFDEVICE Device
     );
 
 //
 // Events from the IoQueue object
 //
-EVT_WDF_IO_QUEUE_IO_DEVICE_CONTROL viogpuuserEvtIoDeviceControl;
-EVT_WDF_IO_QUEUE_IO_STOP viogpuuserEvtIoStop;
+EVT_WDF_IO_QUEUE_IO_DEVICE_CONTROL viogpuglICDEvtIoDeviceControl;
+EVT_WDF_IO_QUEUE_IO_STOP viogpuglICDEvtIoStop;
 
 EXTERN_C_END

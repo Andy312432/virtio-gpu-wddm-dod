@@ -14,10 +14,6 @@ NTSTATUS InitFullGraphicsDriver(
     _In_ UNICODE_STRING* pRegistryPath
 );
 
-NTSTATUS DxgkDdiCreateDevice(
-    CONST HANDLE  hAdapter,
-    DXGKARG_CREATEDEVICE* pCreateDevice
-);
 //
 // PnP DDIs
 //
@@ -221,7 +217,175 @@ VioGpuDodSystemDisplayWrite(
     _In_  UINT  PositionY);
 
 //FullGraphs specific
-NTSTATUS DxgkddiCreateallocation(
+NTSTATUS APIENTRY VioGpuCreateDevice(
+    IN_CONST_HANDLE hAdapter,
+    INOUT_PDXGKARG_CREATEDEVICE pCreateDevice
+);
+
+NTSTATUS APIENTRY VioGpuCreateAllocation(
     _In_ IN_CONST_HANDLE hAdapter,
     _Inout_ INOUT_PDXGKARG_CREATEALLOCATION pCreateAllocation
+);
+
+NTSTATUS APIENTRY VioGpuNotifyAcpiEvent(
+    _In_  IN_CONST_PVOID MiniportDeviceContext,
+    _In_  IN_DXGK_EVENT_TYPE EventType,
+    _In_  IN_ULONG Event,
+    _In_  IN_PVOID Argument,
+    _Out_ OUT_PULONG AcpiFlags
+);
+
+void VioGpuControlEtwLogging(
+    _In_ IN_BOOLEAN Enable,
+    _In_ IN_ULONG Flags,
+    _In_ IN_UCHAR Level
+);
+
+
+NTSTATUS APIENTRY VioGpuDestroyAllocation(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_DESTROYALLOCATION pDestroyAllocation
+);
+
+NTSTATUS APIENTRY VioGpuDescribeAllocation(
+    _In_     IN_CONST_HANDLE hAdapter,
+    _Inout_ INOUT_PDXGKARG_DESCRIBEALLOCATION pDescribeAllocation
+);
+
+NTSTATUS APIENTRY VioGpuGetStandardAllocationDriverData(
+    _In_     IN_CONST_HANDLE hAdapter,
+    _Inout_ INOUT_PDXGKARG_GETSTANDARDALLOCATIONDRIVERDATA pGetStandardAllocationDriverData
+);
+
+NTSTATUS APIENTRY VioGpuAcquireSwizzlingRange(
+    _In_     IN_CONST_HANDLE hAdapter,
+    _Inout_ INOUT_PDXGKARG_ACQUIRESWIZZLINGRANGE pAcquireSwizzlingRange
+);
+
+NTSTATUS APIENTRY VioGpuReleaseSwizzlingRange(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_RELEASESWIZZLINGRANGE pReleaseSwizzlingRange
+);
+
+NTSTATUS APIENTRY VioGpuPatch(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_PATCH pPatch
+);
+
+NTSTATUS APIENTRY VioGpuSubmitCommand(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_SUBMITCOMMAND pSubmitCommand
+);
+
+NTSTATUS APIENTRY VioGpuPreemptCommand(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_PREEMPTCOMMAND pPreemptCommand
+);
+
+NTSTATUS APIENTRY VioGpuBuildPagingBuffer(
+    _In_     IN_CONST_HANDLE hAdapter,
+    _Inout_ IN_PDXGKARG_BUILDPAGINGBUFFER pBuildPagingBuffer
+);
+
+NTSTATUS APIENTRY VioGpuSetPalette(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_SETPALETTE pSetPalette
+);
+
+NTSTATUS APIENTRY VioGpuResetFromTimeout(
+    _In_ IN_CONST_HANDLE hAdapter
+);
+
+NTSTATUS APIENTRY VioGpuRestartFromTimeout(
+    _In_ IN_CONST_HANDLE hAdapter
+);
+
+NTSTATUS APIENTRY VioGpuCollectDbgInfo(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_COLLECTDBGINFO pCollectDbgInfo
+);
+
+NTSTATUS APIENTRY VioGpuQueryCurrentFence(
+    _In_     IN_CONST_HANDLE hAdapter,
+    _Inout_ INOUT_PDXGKARG_QUERYCURRENTFENCE pCurrentFence
+);
+
+NTSTATUS APIENTRY VioGpuRecommendVidPnTopology(
+    IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_RECOMMENDVIDPNTOPOLOGY_CONST pRecommendVidPnTopology
+);
+
+NTSTATUS APIENTRY VioGpuGetScanLine(
+    _In_     IN_CONST_HANDLE hAdapter,
+    _Inout_ INOUT_PDXGKARG_GETSCANLINE pGetScanLine
+);
+
+NTSTATUS APIENTRY VioGpuStopCapture(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_STOPCAPTURE pStopCapture
+);
+
+NTSTATUS APIENTRY VioGpuControlInterrupt(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_DXGK_INTERRUPT_TYPE InterruptType,
+    _In_ IN_BOOLEAN EnableInterrupt
+);
+
+NTSTATUS APIENTRY VioGpuCreateOverlay(
+    _In_     IN_CONST_HANDLE hAdapter,
+    _Inout_ INOUT_PDXGKARG_CREATEOVERLAY pCreateOverlay
+);
+
+NTSTATUS APIENTRY VioGpuDestroyDevice(
+    _In_ IN_CONST_HANDLE hDevice
+);
+
+NTSTATUS APIENTRY VioGpuOpenAllocation(
+    _In_ IN_CONST_HANDLE hDevice,
+    _In_ IN_CONST_PDXGKARG_OPENALLOCATION pOpenAllocation
+);
+
+NTSTATUS APIENTRY VioGpuCloseAllocation(
+    _In_ IN_CONST_HANDLE hDevice,
+    _In_ IN_CONST_PDXGKARG_CLOSEALLOCATION pCloseAllocation
+);
+
+NTSTATUS APIENTRY VioGpuRender(
+    _In_     IN_CONST_HANDLE hContext,
+    _Inout_ INOUT_PDXGKARG_RENDER pRender
+);
+
+NTSTATUS APIENTRY VioGpuPresent(
+    _In_     IN_CONST_HANDLE hContext,
+    _Inout_ INOUT_PDXGKARG_PRESENT pPresent
+);
+
+
+NTSTATUS APIENTRY VioGpuUpdateOverlay(
+    _In_ IN_CONST_HANDLE hOverlay,
+    _In_ IN_CONST_PDXGKARG_UPDATEOVERLAY pUpdateOverlay
+);
+
+
+NTSTATUS APIENTRY VioGpuFlipOverlay(
+    _In_ IN_CONST_HANDLE hOverlay,
+    _In_ IN_CONST_PDXGKARG_FLIPOVERLAY pFlipOverlay
+);
+
+NTSTATUS APIENTRY VioGpuDestroyOverlay(
+    _In_ IN_CONST_HANDLE hOverlay
+);
+
+NTSTATUS APIENTRY VioGpuCreateContext(
+    _In_     IN_CONST_HANDLE hDevice,
+    _Inout_ INOUT_PDXGKARG_CREATECONTEXT pCreateContext
+);
+
+NTSTATUS APIENTRY VioGpuDestroyContext(
+    _In_ IN_CONST_HANDLE hContext
+);
+
+NTSTATUS APIENTRY VioGpuSetDisplayPrivateDriverFormat(
+    _In_ IN_CONST_HANDLE hAdapter,
+    _In_ IN_CONST_PDXGKARG_SETDISPLAYPRIVATEDRIVERFORMAT pSetDisplayPrivateDriverFormat
 );

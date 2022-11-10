@@ -18,7 +18,7 @@ Environment:
 #include "device.tmh"
 
 NTSTATUS
-viogpuuserCreateDevice(
+viogpuglICDCreateDevice(
     _Inout_ PWDFDEVICE_INIT DeviceInit
     )
 /*++
@@ -71,7 +71,7 @@ Return Value:
         //
         status = WdfDeviceCreateDeviceInterface(
             device,
-            &GUID_DEVINTERFACE_viogpuuser,
+            &GUID_DEVINTERFACE_viogpuglICD,
             NULL // ReferenceString
             );
 
@@ -79,7 +79,7 @@ Return Value:
             //
             // Initialize the I/O Package and any Queues
             //
-            status = viogpuuserQueueInitialize(device);
+            status = viogpuglICDQueueInitialize(device);
         }
     }
 

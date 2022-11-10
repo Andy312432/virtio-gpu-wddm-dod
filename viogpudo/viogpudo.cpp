@@ -3775,3 +3775,15 @@ BOOLEAN VioGpuAdapter::GpuObjectAttach(UINT res_id, VioGpuObj* obj)
     DbgPrint(TRACE_LEVEL_VERBOSE, ("<--- %s\n", __FUNCTION__));
     return TRUE;
 }
+
+NTSTATUS VioGpuDod::CreateDevice(INOUT_PDXGKARG_CREATEDEVICE pCreateDevice) {
+    m_hDevice = (m_hDevice) ? m_hDevice : pCreateDevice->hDevice ;
+
+    pCreateDevice->pInfo->DmaBufferSegmentSet = 0;
+    pCreateDevice->pInfo->DmaBufferSize = VBUFFER_SIZE;
+    pCreateDevice->pInfo->DmaBufferPrivateDataSize = 0x4000;
+    pCreateDevice->pInfo->AllocationListSize = 0xc00;//FIXME: Seems virtGPU allocate different size in each cmd?
+    pCreateDevice->pInfo->PatchLocationListSize = 0xc00;
+    return STATUS_SUCCESS;
+}
+

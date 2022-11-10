@@ -171,7 +171,7 @@ typedef struct _CURRENT_BDD_MODE
     } FrameBuffer;
 } CURRENT_BDD_MODE;
 
-class VioGpuDod;
+//class VioGpuDod;
 
 class IVioGpuAdapter {
 public:
@@ -366,6 +366,7 @@ private:
     D3DDDI_VIDEO_PRESENT_SOURCE_ID m_SystemDisplaySourceId;
     DXGKARG_SETPOINTERSHAPE m_PointerShape;
     IVioGpuAdapter* m_pHWDevice;
+    HANDLE m_hDevice;
 public:
     VioGpuDod(_In_ DEVICE_OBJECT* pPhysicalDeviceObject);
     ~VioGpuDod(void);
@@ -475,6 +476,8 @@ public:
                                  _In_                                     INT   PositionX,
                                  _In_                                     INT   PositionY);
     PDXGKRNL_INTERFACE GetDxgkInterface(void) { return &m_DxgkInterface;}
+
+    NTSTATUS CreateDevice(INOUT_PDXGKARG_CREATEDEVICE pCreateDevice);
 private:
     VOID CleanUp(VOID);
     BOOLEAN CheckHardware();

@@ -18,10 +18,11 @@ Environment:
 #include <wdf.h>
 #include <initguid.h>
 
+#include <d3dkmthk.h>
+
 #include "device.h"
 #include "queue.h"
 #include "trace.h"
-
 EXTERN_C_START
 
 //
@@ -29,7 +30,7 @@ EXTERN_C_START
 //
 
 DRIVER_INITIALIZE DriverEntry;
-EVT_WDF_DRIVER_DEVICE_ADD viogpuuserEvtDeviceAdd;
-EVT_WDF_OBJECT_CONTEXT_CLEANUP viogpuuserEvtDriverContextCleanup;
+EVT_WDF_DRIVER_DEVICE_ADD viogpuglICDEvtDeviceAdd;
+EVT_WDF_OBJECT_CONTEXT_CLEANUP viogpuglICDEvtDriverContextCleanup;
 
 EXTERN_C_END
