@@ -8,6 +8,12 @@ Future imagination
 Since I am **not** an experienced developer, there is no promise!
 
 DOD part
+
+Things got worse than I thought. We need to implement lots of unimplemented functions. see drivers.cpp for more details.
+
+##Sadly, I need at least 3 hours of investigation to implement one, and this isn't possible due to as i am preparing for the big test... As a result, I will suspand this project to [[Jan 16 2023]] which I have finished my test. Help is appreciated, and I still don't have a way to make sure the function i implement is correct... All in all, see you there!
+
+
 - [ ] Investigate why there is only certain cursor that supports accerlation
 - [ ] Better cursor hiding implementation
 - [ ] Improve PnP support to avoid freezing when manually install driver
