@@ -171,7 +171,7 @@ typedef struct _CURRENT_BDD_MODE
     } FrameBuffer;
 } CURRENT_BDD_MODE;
 
-//class VioGpuDod;
+class VioGpuDod;
 
 class IVioGpuAdapter {
 public:

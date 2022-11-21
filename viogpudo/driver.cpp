@@ -779,7 +779,9 @@ NTSTATUS APIENTRY VioGpuCreateDevice(
 NTSTATUS APIENTRY VioGpuCreateAllocation(
     _In_ IN_CONST_HANDLE hAdapter,
     _Inout_ INOUT_PDXGKARG_CREATEALLOCATION pCreateAllocation
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuNotifyAcpiEvent(
     _In_  IN_CONST_PVOID MiniportDeviceContext,
@@ -787,162 +789,226 @@ NTSTATUS APIENTRY VioGpuNotifyAcpiEvent(
     _In_  IN_ULONG Event,
     _In_  IN_PVOID Argument,
     _Out_ OUT_PULONG AcpiFlags
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 void VioGpuControlEtwLogging(
     _In_ IN_BOOLEAN Enable,
     _In_ IN_ULONG Flags,
     _In_ IN_UCHAR Level
-) {}
+) {
+    return;
+}
 
 
 NTSTATUS APIENTRY VioGpuDestroyAllocation(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_DESTROYALLOCATION pDestroyAllocation
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuDescribeAllocation(
     _In_     IN_CONST_HANDLE hAdapter,
     _Inout_ INOUT_PDXGKARG_DESCRIBEALLOCATION pDescribeAllocation
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuGetStandardAllocationDriverData(
     _In_     IN_CONST_HANDLE hAdapter,
     _Inout_ INOUT_PDXGKARG_GETSTANDARDALLOCATIONDRIVERDATA pGetStandardAllocationDriverData
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuAcquireSwizzlingRange(
     _In_     IN_CONST_HANDLE hAdapter,
     _Inout_ INOUT_PDXGKARG_ACQUIRESWIZZLINGRANGE pAcquireSwizzlingRange
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuReleaseSwizzlingRange(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_RELEASESWIZZLINGRANGE pReleaseSwizzlingRange
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuPatch(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_PATCH pPatch
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuSubmitCommand(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_SUBMITCOMMAND pSubmitCommand
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuPreemptCommand(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_PREEMPTCOMMAND pPreemptCommand
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuBuildPagingBuffer(
     _In_     IN_CONST_HANDLE hAdapter,
     _Inout_ IN_PDXGKARG_BUILDPAGINGBUFFER pBuildPagingBuffer
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuSetPalette(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_SETPALETTE pSetPalette
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuResetFromTimeout(
     _In_ IN_CONST_HANDLE hAdapter
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuRestartFromTimeout(
     _In_ IN_CONST_HANDLE hAdapter
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuCollectDbgInfo(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_COLLECTDBGINFO pCollectDbgInfo
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuQueryCurrentFence(
     _In_     IN_CONST_HANDLE hAdapter,
     _Inout_ INOUT_PDXGKARG_QUERYCURRENTFENCE pCurrentFence
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuRecommendVidPnTopology(
     IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_RECOMMENDVIDPNTOPOLOGY_CONST pRecommendVidPnTopology
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuGetScanLine(
     _In_     IN_CONST_HANDLE hAdapter,
     _Inout_ INOUT_PDXGKARG_GETSCANLINE pGetScanLine
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuStopCapture(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_STOPCAPTURE pStopCapture
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuControlInterrupt(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_DXGK_INTERRUPT_TYPE InterruptType,
     _In_ IN_BOOLEAN EnableInterrupt
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuCreateOverlay(
     _In_     IN_CONST_HANDLE hAdapter,
     _Inout_ INOUT_PDXGKARG_CREATEOVERLAY pCreateOverlay
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuDestroyDevice(
     _In_ IN_CONST_HANDLE hDevice
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuOpenAllocation(
     _In_ IN_CONST_HANDLE hDevice,
     _In_ IN_CONST_PDXGKARG_OPENALLOCATION pOpenAllocation
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuCloseAllocation(
     _In_ IN_CONST_HANDLE hDevice,
     _In_ IN_CONST_PDXGKARG_CLOSEALLOCATION pCloseAllocation
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuRender(
     _In_     IN_CONST_HANDLE hContext,
     _Inout_ INOUT_PDXGKARG_RENDER pRender
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuPresent(
     _In_     IN_CONST_HANDLE hContext,
     _Inout_ INOUT_PDXGKARG_PRESENT pPresent
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 
 NTSTATUS APIENTRY VioGpuUpdateOverlay(
     _In_ IN_CONST_HANDLE hOverlay,
     _In_ IN_CONST_PDXGKARG_UPDATEOVERLAY pUpdateOverlay
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 
 NTSTATUS APIENTRY VioGpuFlipOverlay(
     _In_ IN_CONST_HANDLE hOverlay,
     _In_ IN_CONST_PDXGKARG_FLIPOVERLAY pFlipOverlay
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuDestroyOverlay(
     _In_ IN_CONST_HANDLE hOverlay
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuCreateContext(
     _In_     IN_CONST_HANDLE hDevice,
     _Inout_ INOUT_PDXGKARG_CREATECONTEXT pCreateContext
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuDestroyContext(
     _In_ IN_CONST_HANDLE hContext
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 NTSTATUS APIENTRY VioGpuSetDisplayPrivateDriverFormat(
     _In_ IN_CONST_HANDLE hAdapter,
     _In_ IN_CONST_PDXGKARG_SETDISPLAYPRIVATEDRIVERFORMAT pSetDisplayPrivateDriverFormat
-) {}
+) {
+    return STATUS_NOT_IMPLEMENTED;
+}
 
 
 #if defined(DBG)
