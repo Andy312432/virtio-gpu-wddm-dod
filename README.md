@@ -2,6 +2,10 @@
 Fork of https://github.com/utmapp/virtio-gpu-wddm-dod
 Trying to imporve UTM Windows experience(Other qemu set-up not supported)
 
+#ARCHIEVED! pleas go to [virtio-gpu-wddm](https://github.com/Andy312432/virtio-gpu-wddm) instead
+
+
+
 Future imagination
 ------------
 Since I am **not** an experienced developer, there is no promise!
